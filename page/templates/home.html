@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2></h2>
+    
+        
+        {% for dt  in dt %}
+        
+            <h3>{{dt.id}}.{{dt.title}}</h3>
+            
+            <p>{{dt.description}}</p>
+            <center><h4>Written By : {{dt.auther}}, On : {{dt.published_date}}</h4></center>
+            <hr>
+        {% endfor %}
+
+        <div>
+            <span>
+                {% if dt.has_previous %}
+                    <a href="?page={{dt.previous_page_number}}">Previous</a>
+                    {% endif %}
+                    
+                    <span>{{dt.number}}</span>
+                    
+                    {% if dt.has_next %}
+                    <a href="?page={{dt.next_page_number}}">Next</a>
+                {% endif %}
+
+            </span>
+        </div>
+
+
+    </table>
+</body>
+</html>
